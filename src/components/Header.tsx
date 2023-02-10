@@ -10,26 +10,30 @@ import logo from '../assets/logo.png'
 
 const Header = () => {
   return (
-    <motion.header className=''
+    <motion.header className='fixed w-100 h-16 flex justify-center items-center z-999'
       initial={{ y: '-100vh'}}
       animate={{ y: 0}}
       transition={{ delay: 1}}
     >
-      <Burguer />
 
-      <motion.div className=''
+      <motion.div className='w-11/12 max-w-5xl h-100 border-b-2 border-white flex justify-between items-center' 
         initial={{ y: '-100vh'}}
         animate={{ y: 0}}
         transition={{ delay: 1.2}}
       >
-        <Link to='/' className=''>
+
+        <Burguer />
+
+        <Link to='/' className='w-14 h-14 invert'>
           <motion.img src={logo} alt='logo'
              whileHover={{scale: 1.2}}
           />
         </Link>
+
+        <Location />
+
       </motion.div>
 
-      <Location />
     </motion.header>
   )
 }
